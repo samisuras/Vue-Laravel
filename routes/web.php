@@ -16,4 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('mis-ideas','IdeaController@getIdeas');
-Route::post('mis-ideas','IdeasController@store');
+Route::post('mis-ideas','IdeaController@store');

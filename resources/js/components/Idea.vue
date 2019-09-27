@@ -46,7 +46,9 @@
             getIdeas: async function () {
                 var urlIdeas = 'mis-ideas';
                 try{
-                    var ideas = await axios.get(url);
+                    var ideas = await axios.get(urlIdeas);
+                    this.ideas = ideas.data;
+                    console.log(this.ideas);
                 }catch(e){
                     console.log(e);
                 }

@@ -8,7 +8,7 @@ use App\Idea;
 class IdeaController extends Controller
 {
     public function getIdeas(){
-        return Idea::orderBy('id','DESC')->get();
+        return Idea::all();
     }
 
     public function store(Request $request){
