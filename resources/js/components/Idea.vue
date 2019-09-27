@@ -20,7 +20,7 @@
             <li v-for="idea in ideas">
                 <p>
                     <small class="text-muted">
-                        <em>{{ idea.created_at }}</em>
+                        <em>{{ since(idea.created_at) }}</em>
                     </small>
                     {{ idea.description }}
                 </p>
@@ -32,6 +32,8 @@
 
 <script>
     import axios from 'axios';
+    import toastr from 'toastr';
+    import moment from 'moment';
 
     export default {
         data(){
@@ -43,6 +45,9 @@
           this.getIdeas();
         },
         methods: {
+            since(d){
+                return moment(d).fromNow();
+            },
             getIdeas: async function () {
                 var urlIdeas = 'mis-ideas';
                 try{
